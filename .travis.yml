@@ -2,6 +2,8 @@ sudo: required
 services: 
   - docker
 
+install: travis_wait 30 mvn install
+
 before_install:
   - docker build -t sagardokhale29/react-test -f ./client/Dockerfile.dev ./client
 
