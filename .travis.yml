@@ -4,7 +4,7 @@ services:
 
 before_install:
   - docker build -t sagardokhale29/react-test -f ./client/Dockerfile.dev ./client
-  - travis_wait 30 sleep 1800
+
 
 script:
   - docker run sagardokhale29/react-test npm test -- --coverage
@@ -23,3 +23,4 @@ after_success:
   - docker push sagardokhale29/multi-nginx
   - docker push sagardokhale29/multi-server
   - docker push sagardokhale29/multi-worker
+  - travis_wait 30 sleep 1800
